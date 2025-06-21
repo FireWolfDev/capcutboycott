@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alternatives – CapCut Watch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <img src="logo.jpg" alt="Logo" class="logo">
+    <nav>
+      <a href="index.html">🏠 Accueil</a>
+      <a href="boycott.html">🚫 Boycott</a>
+      <a href="alternatives.html" class="active">🔄 Alternatives</a>
+    </nav>
+  </div>
+
+  <main>
+    <header class="banner">
+      <h1>Alternatives à CapCut</h1>
+      <p>Des solutions plus respectueuses de ta vie privée.</p>
+    </header>
+
+    <div class="accordion">
+      <div class="accordion-section">
+        <div class="accordion-header" onclick="toggleAccordion(this)">✨ Alternatives Gratuites</div>
+        <div class="accordion-content">
+          <div class="sub-item" onclick="toggleSub(this)">VLLO (Android/iOS)</div>
+          <div class="sub-details">
+            Interface intuitive, pas de collecte excessive. Fonctionne hors-ligne. Publicité discrète.
+          </div>
+
+          <div class="sub-item" onclick="toggleSub(this)">Shotcut (PC)</div>
+          <div class="sub-details">
+            Logiciel libre de montage vidéo, multiplateforme. Aucun tracking.
+          </div>
+
+          <div class="sub-item" onclick="toggleSub(this)">LightCut (Android/iOS)</div>
+          <div class="sub-details">
+            Une app sans compte obligatoire, plus respectueuse que CapCut.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-section">
+        <div class="accordion-header" onclick="toggleAccordion(this)">💎 Alternatives Payantes</div>
+        <div class="accordion-content">
+          <div class="sub-item" onclick="toggleSub(this)">LumaFusion (iOS)</div>
+          <div class="sub-details">
+            Montage avancé sur mobile, paiement unique, sans abonnement ni tracking excessif.
+          </div>
+
+          <div class="sub-item" onclick="toggleSub(this)">DaVinci Resolve (PC)</div>
+          <div class="sub-details">
+            Version gratuite puissante, mais version Studio sans cloud, ni tracking. Pro.
+          </div>
+
+          <div class="sub-item" onclick="toggleSub(this)">Adobe Premiere Pro</div>
+          <div class="sub-details">
+            Puissant, mais nécessite vigilance côté vie privée (tracking activé par défaut). Option pro avec paramétrage possible.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
