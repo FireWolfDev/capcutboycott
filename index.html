@@ -1,242 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dangers CapCut – Analyse complète</title>
-  <style>
-    :root {
-      --bg: #0e0e0e;
-      --card: #1c1c1c;
-      --section: #2c2c2c;
-      --text: #f5f5f5;
-      --muted: #aaa;
-      --accent: #0d6efd;
-      --radius: 10px;
-    }
-
-    body {
-      margin: 0;
-      background: linear-gradient(to bottom right, #0a0a0a, #1a1a1a);
-      font-family: "Segoe UI", sans-serif;
-      color: var(--text);
-    }
-
-    header {
-      background: #000;
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 1px solid #333;
-    }
-
-    header img {
-      height: 60px;
-      margin-bottom: 1rem;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    header p {
-      margin: 0.5rem 0 0;
-      color: var(--muted);
-    }
-
-    .accordion {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    .accordion-section {
-      background-color: var(--section);
-      margin-bottom: 1.5rem;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .accordion-header {
-      padding: 1rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      cursor: pointer;
-      background: #1e1e1e;
-      user-select: none;
-      transition: background 0.3s;
-    }
-
-    .accordion-header:hover {
-      background: #2a2a2a;
-    }
-
-    .accordion-content {
-      display: none;
-      padding: 1rem;
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    .sub-item {
-      background: var(--card);
-      margin: 0.5rem 0;
-      padding: 0.8rem 1rem;
-      border-radius: var(--radius);
-      border-left: 5px solid var(--accent);
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    .sub-item:hover {
-      background: #252525;
-    }
-
-    .sub-details {
-      display: none;
-      padding: 0.5rem 1rem 0.8rem;
-      font-size: 0.95rem;
-      color: var(--muted);
-      border-left: 3px solid #333;
-      margin-left: 0.5rem;
-    }
-
-    .level-0 { border-left-color: #198754; }
-    .level-1 { border-left-color: #20c997; }
-    .level-2 { border-left-color: #ffc107; }
-    .level-3 { border-left-color: #fd7e14; }
-    .level-4 { border-left-color: #dc3545; }
-    .level-5 { border-left-color: #a71d2a; }
-
-    .footer {
-      text-align: center;
-      margin: 3rem 0;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accueil – CapCut Watch</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <img src="logo.jpg" alt="Logo">
-  <h1>Analyse des risques CapCut</h1>
-  <p>Chaque niveau représente une gravité de 0 (normal) à 5 (critique)</p>
-</header>
-
-<div class="accordion">
-
-  <!-- Niveau 0 -->
-  <div class="accordion-section">
-    <div class="accordion-header" onclick="toggleAccordion(this)">🟢 Niveau 0 – Acceptable</div>
-    <div class="accordion-content">
-      <div class="sub-item level-0" onclick="toggleSub(this)">Collecte des préférences langue, appareil</div>
-      <div class="sub-details">
-        Utilisé pour le bon fonctionnement, comme n'importe quelle app. Peu intrusif.
-      </div>
-    </div>
+  <div class="sidebar">
+    <img src="logo.jpg" alt="Logo" class="logo">
+    <nav>
+      <a href="index.html" class="active">🏠 Accueil</a>
+      <a href="boycott.html">🚫 Boycott</a>
+      <a href="alternatives.html">🔄 Alternatives</a>
+    </nav>
   </div>
 
-  <!-- Niveau 1 -->
-  <div class="accordion-section">
-    <div class="accordion-header" onclick="toggleAccordion(this)">🟢 Niveau 1 – Faible risque</div>
-    <div class="accordion-content">
-      <div class="sub-item level-1" onclick="toggleSub(this)">Utilisation de cookies de tracking</div>
-      <div class="sub-details">
-        Tracking standard via outils tiers (Google, Facebook). Peut être refusé partiellement.
-      </div>
-    </div>
-  </div>
-
-  <!-- Niveau 2 -->
-  <div class="accordion-section">
-    <div class="accordion-header" onclick="toggleAccordion(this)">🟡 Niveau 2 – Modéré</div>
-    <div class="accordion-content">
-      <div class="sub-item level-2" onclick="toggleSub(this)">Analyse comportementale dans l'app</div>
-      <div class="sub-details">
-        CapCut suit ton usage pour améliorer l'UX et son algorithme. Aucun opt-out complet.
-      </div>
-      <div class="sub-item level-2" onclick="toggleSub(this)">Données système (modèle, OS, IP...)</div>
-      <div class="sub-details">
-        Collectées au lancement pour analytics, mais aussi pour profilage publicitaire.
-      </div>
-    </div>
-  </div>
-
-  <!-- Niveau 3 -->
-  <div class="accordion-section">
-    <div class="accordion-header" onclick="toggleAccordion(this)">🟠 Niveau 3 – Important</div>
-    <div class="accordion-content">
-      <div class="sub-item level-3" onclick="toggleSub(this)">Publicités ciblées dans l'app</div>
-      <div class="sub-details">
-        Des recommandations ou promotions peuvent être injectées selon ton profil.
-      </div>
-      <div class="sub-item level-3" onclick="toggleSub(this)">Renouvellement d'abonnement automatique</div>
-      <div class="sub-details">
-        Certains utilisateurs se plaignent de reconductions non visibles ou difficiles à annuler.
-      </div>
-    </div>
-  </div>
-
-  <!-- Niveau 4 -->
-  <div class="accordion-section">
-    <div class="accordion-header" onclick="toggleAccordion(this)">🔴 Niveau 4 – Élevé</div>
-    <div class="accordion-content">
-      <div class="sub-item level-4" onclick="toggleSub(this)">Accès complet aux vidéos importées</div>
-      <div class="sub-details">
-        CapCut peut analyser, indexer, ou stocker des vidéos importées dans l'app (cf. IA, suggestions...).
-      </div>
-      <div class="sub-item level-4" onclick="toggleSub(this)">Absence de suppression garantie des données</div>
-      <div class="sub-details">
-        Aucune indication claire sur la purge complète des données après désinstallation.
-      </div>
-    </div>
-  </div>
-
-  <!-- Niveau 5 -->
-  <div class="accordion-section">
-    <div class="accordion-header" onclick="toggleAccordion(this)">⚫ Niveau 5 – Critique</div>
-    <div class="accordion-content">
-      <div class="sub-item level-5" onclick="toggleSub(this)">Données envoyées à ByteDance (Chine)</div>
-      <div class="sub-details">
-        Serveurs hébergés en Chine, hors RGPD, avec possibilité d'accès gouvernemental. Aucune transparence sur ce transfert.<br>
-        <strong>Source :</strong> Politique CapCut, section Transfert international.
-      </div>
-      <div class="sub-item level-5" onclick="toggleSub(this)">Blocage d’export sans payer (dark pattern)</div>
-      <div class="sub-details">
-        Certaines fonctions de montage sont gratuites jusqu’à l’export, qui est alors bloqué sans avertissement clair.<br>
-        <strong>Source :</strong> Tests de terrain + communauté.
-      </div>
-      <div class="sub-item level-5" onclick="toggleSub(this)">Appropriation des droits des médias utilisateur</div>
-      <div class="sub-details">
-        CapCut se réserve tous les droits sur les médias importés par les utilisateurs (vidéos, photos, sons...). Ils ont le droit de se servir de ces médias sans autorisation claire pour des publicités, du contenu ou de l'apprentissage d'IA en s'attribuant les droits de ces derniers.<br>
-        <strong>Source :</strong> Politique de confidentialité
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="footer">
-  Projet open source par FireWolf — Dernière mise à jour : 2025
-</div>
-
-<script>
-  function toggleAccordion(el) {
-    const content = el.nextElementSibling;
-    content.style.display = content.style.display === "block" ? "none" : "block";
-  }
-
-  function toggleSub(el) {
-    const details = el.nextElementSibling;
-    details.style.display = details.style.display === "block" ? "none" : "block";
-  }
-</script>
-
+  <main>
+    <header class="banner">
+      <h1>Bienvenue sur CapCut Watch</h1>
+      <p>Explore les risques liés à CapCut et découvre des alternatives saines.</p>
+      <a href="boycott.html" class="cta-button">En savoir plus</a>
+    </header>
+  </main>
 </body>
 </html>
